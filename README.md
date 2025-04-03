@@ -60,7 +60,6 @@ npm run dev
 ### Frontend Setup
 ```bash
 
-
 # Install dependencies
 npm install
 
