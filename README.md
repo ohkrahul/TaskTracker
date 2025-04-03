@@ -1,71 +1,84 @@
-Task Tracker Application
-A full-stack MERN application for tracking tasks with user authentication.
-Tech Stack
+# TaskTracker
 
-Frontend:
+A full-stack MERN application for managing and tracking tasks with user authentication, filtering, and status management.
 
-React.js
-React Router for navigation
-Tailwind CSS for styling
-Axios for API calls
+![Task Tracker App](https://raw.githubusercontent.com/ohkrahul/TaskTracker/main/screenshots/task-dashboard.png)
 
+## 🚀 Features
 
-Backend:
+- **User Authentication**: Secure login and registration with JWT
+- **Task Management**: Create, read, update, and delete tasks
+- **Status Tracking**: Mark tasks as pending, in-progress, or completed
+- **Task Filtering**: Filter tasks by their status
+- **Responsive Design**: Works on mobile, tablet, and desktop
 
-Node.js with Express.js
-MongoDB (MongoDB Atlas) for database storage
-JSON Web Tokens (JWT) for authentication
-bcrypt.js for password hashing
+## 🛠️ Tech Stack
 
+### Frontend
+- **React.js**: UI components and state management
+- **React Router**: Navigation and routing
+- **Tailwind CSS**: Styling and responsive design
+- **Axios**: API requests to the backend
 
+### Backend
+- **Node.js**: JavaScript runtime
+- **Express.js**: Web framework
+- **MongoDB**: NoSQL database
+- **JWT**: Authentication and authorization
+- **Bcrypt.js**: Password hashing
 
-Features
+## 📋 Prerequisites
 
-User registration and login
-Token-based authentication
-Create, read, update, and delete tasks
-Task filtering (All, Pending, In-progress, Completed)
-Responsive design with Tailwind CSS
+- Node.js (v14 or higher)
+- MongoDB Atlas account (or local MongoDB installation)
+- npm or yarn package manager
 
-Setup Instructions
-Prerequisites
+## 🔧 Installation and Setup
 
-Node.js (v14 or higher)
-MongoDB Atlas account (or local MongoDB installation)
-NPM or Yarn package manager
+### Clone the repository
+```bash
+git clone https://github.com/ohkrahul/TaskTracker.git
+cd TaskTracker
+```
 
-Backend Setup
+### Backend Setup
+```bash
+# Navigate to server directory
+cd server
 
-Clone the repository
-Copygit clone <repository-url>
-cd my-app/server
+# Install dependencies
+npm install
 
-Install dependencies
-Copynpm install
+# Create .env file in the server directory with the following:
+# MONGO_URI=your_mongodb_connection_string
+# PORT=5000
+# JWT_SECRET=your_jwt_secret_key
 
-Create a .env file in the server directory with the following variables:
-CopyMONGO_URI=<your-mongodb-connection-string>
-PORT=5000
-JWT_SECRET=<your-jwt-secret-key>
+# Start the server
+npm run dev
+```
 
-Start the server
-Copynpm run dev
+### Frontend Setup
+```bash
+# Navigate to client directory
+cd ../client
 
+# Install dependencies
+npm install
 
-Frontend Setup
+# Start the React application
+npm start
+```
 
-Navigate to the client directory
-Copycd ../client
+## 🖼️ Screenshots
 
-Install dependencies
-Copynpm install
+![Login Screen](https://raw.githubusercontent.com/ohkrahul/TaskTracker/main/screenshots/login.png)
+![Task Dashboard](https://raw.githubusercontent.com/ohkrahul/TaskTracker/main/screenshots/task-dashboard.png)
 
-Start the React application
-Copynpm start
+## 📁 Project Structure
 
-
-Folder Structure
-my-app               # React frontend
+```
+TaskTracker/             # React frontend
 │   ├── public/
 │   ├── src/
 │   │   ├── components/   # React components
@@ -83,39 +96,49 @@ my-app               # React frontend
 │   └── package.json
 │
 └── README.md
-API Endpoints
+```
 
-Authentication
+## 🔄 API Endpoints
 
-POST /api/auth/register - Register a new user
-POST /api/auth/login - Login a user
-GET /api/auth/user - Get authenticated user data
+### Authentication
+- **POST** `/api/auth/register` - Register a new user
+- **POST** `/api/auth/login` - Login a user
+- **GET** `/api/auth/user` - Get authenticated user data
 
+### Tasks
+- **GET** `/api/tasks` - Get all tasks for a user
+- **GET** `/api/tasks/filter/:status` - Get filtered tasks
+- **GET** `/api/tasks/:id` - Get a specific task
+- **POST** `/api/tasks` - Create a new task
+- **PUT** `/api/tasks/:id` - Update a task
+- **DELETE** `/api/tasks/:id` - Delete a task
 
-Tasks
+## 🌟 Future Enhancements
 
-GET /api/tasks - Get all tasks for a user
-GET /api/tasks/filter/:status - Get filtered tasks
-GET /api/tasks/:id - Get a specific task
-POST /api/tasks - Create a new task
-PUT /api/tasks/:id - Update a task
-DELETE /api/tasks/:id - Delete a task
+- Task due dates and reminders
+- Task priority levels
+- User profile management
+- Team collaboration features
+- Mobile application version
+- Data visualization and reports
 
+## 🤝 Contributing
 
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/ohkrahul/TaskTracker/issues).
 
-Development Time
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-Backend development: ~8 hours
-Frontend development: ~12 hours
-Styling and responsive design: ~4 hours
-Testing and debugging: ~6 hours
-Total: ~30 hours
+## 📝 License
 
-Future Enhancements
+This project is [MIT](LICENSE) licensed.
 
-Task due dates and reminders
-Task categories/tags
-Team collaboration features
-Drag and drop interface
-Task prioritization
-Dark mode support
+## 👨‍💻 Author
+
+**Rahul**
+
+- GitHub: [@ohkrahul](https://github.com/ohkrahul)
+
