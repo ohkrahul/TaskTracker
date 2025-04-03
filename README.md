@@ -59,8 +59,7 @@ npm run dev
 
 ### Frontend Setup
 ```bash
-# Navigate to client directory
-cd ../client
+
 
 # Install dependencies
 npm install
