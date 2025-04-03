@@ -107,14 +107,7 @@ TaskTracker/             # React frontend
 - **PUT** `/api/tasks/:id` - Update a task
 - **DELETE** `/api/tasks/:id` - Delete a task
 
-## 🌟 Future Enhancements
 
-- Task due dates and reminders
-- Task priority levels
-- User profile management
-- Team collaboration features
-- Mobile application version
-- Data visualization and reports
 
 ## 🤝 Contributing
 
