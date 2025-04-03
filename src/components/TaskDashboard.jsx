@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
@@ -16,23 +16,7 @@ const TaskDashboard = () => {
     fetchTasks();
   }, []);
 
-  useEffect(() => {
-    filterTasks(currentFilter);
-  }, [tasks, currentFilter]);
-
-  const fetchTasks = async () => {
-    try {
-      setLoading(true);
-      const res = await axios.get('/api/tasks');
-      setTasks(res.data);
-      setLoading(false);
-    } catch (err) {
-      setError('Error fetching tasks. Please try again.');
-      setLoading(false);
-    }
-  };
-
-  const filterTasks = (filter) => {
+  const filterTasks = useCallback((filter) => {
     switch (filter) {
       case 'completed':
         setFilteredTasks(tasks.filter(task => task.completed));
@@ -46,7 +30,29 @@ const TaskDashboard = () => {
       default:
         setFilteredTasks(tasks);
     }
+  }, [tasks]);
+
+  // In TaskDashboard.jsx
+useEffect(() => {
+  filterTasks(currentFilter);
+}, [tasks, currentFilter, filterTasks]);
+
+// And to avoid creating a new function in each render, wrap filterTasks with useCallback
+
+
+  const fetchTasks = async () => {
+    try {
+      setLoading(true);
+      const res = await axios.get('/api/tasks');
+      setTasks(res.data);
+      setLoading(false);
+    } catch (err) {
+      setError('Error fetching tasks. Please try again.');
+      setLoading(false);
+    }
   };
+
+  
 
   const addTask = async (task) => {
     try {
@@ -89,6 +95,8 @@ const TaskDashboard = () => {
       setError('Error updating task. Please try again.');
     }
   };
+
+  
 
   // In TaskDashboard.jsx
 return (
