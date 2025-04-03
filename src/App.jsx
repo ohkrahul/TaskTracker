@@ -5,6 +5,8 @@ import Header from './components/Header';
 import Login from './components/Login';
 import Register from './components/Register';
 import TaskDashboard from './components/TaskDashboard';
+// For Vite projects
+import.meta.env.VITE_API_URL
 
 function App() {
   const [user, setUser] = useState(null);
@@ -20,7 +22,11 @@ function App() {
   }, []);
 
   // Set up axios defaults
-  axios.defaults.baseURL = 'http://localhost:5000';
+  // axios.defaults.baseURL = 'http://localhost:5000';
+  // In your client/src/App.js or where you set up axios
+// axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+// In your React app
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
   // Add axios interceptor for adding token to requests
   axios.interceptors.request.use(
