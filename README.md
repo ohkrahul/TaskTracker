@@ -2,7 +2,6 @@
 
 A full-stack MERN application for managing and tracking tasks with user authentication, filtering, and status management.
 
-![Task Tracker App](https://raw.githubusercontent.com/ohkrahul/TaskTracker/main/screenshots/task-dashboard.png)
 
 ## 🚀 Features
 
@@ -70,10 +69,6 @@ npm install
 npm start
 ```
 
-## 🖼️ Screenshots
-
-![Login Screen](https://raw.githubusercontent.com/ohkrahul/TaskTracker/main/screenshots/login.png)
-![Task Dashboard](https://raw.githubusercontent.com/ohkrahul/TaskTracker/main/screenshots/task-dashboard.png)
 
 ## 📁 Project Structure
 
