@@ -16,7 +16,7 @@ const Header = ({ user, setUser }) => {
   return (
     <header className="bg-blue-600 text-white py-4">
       <div className="container mx-auto px-4 flex justify-between items-center max-w-4xl">
-        <h1 className="text-2xl font-bold">Task Tracker</h1>
+        <h1 className="text-2xl font-bold">Task Management</h1>
         <nav>
           {user ? (
             <div className="flex items-center space-x-4">
