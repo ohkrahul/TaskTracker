@@ -1,21 +1,23 @@
 # TaskTracker
 
-A full-stack MERN application for managing and tracking tasks with user authentication, filtering, and status management.
-
+A full-stack MERN application for managing and tracking tasks with user authentication, filtering, search functionality, and comprehensive status management.
 
 ## 🚀 Features
 
 - **User Authentication**: Secure login and registration with JWT
 - **Task Management**: Create, read, update, and delete tasks
 - **Status Tracking**: Mark tasks as pending, in-progress, or completed
+- **Search Functionality**: Filter tasks by title in real-time
 - **Task Filtering**: Filter tasks by their status
+- **Client-Side Routing**: Seamless navigation between views
+- **Detailed Task Views**: Dedicated pages for viewing and editing task details
 - **Responsive Design**: Works on mobile, tablet, and desktop
 
 ## 🛠️ Tech Stack
 
 ### Frontend
 - **React.js**: UI components and state management
-- **React Router**: Navigation and routing
+- **React Router**: Client-side routing and navigation
 - **Tailwind CSS**: Styling and responsive design
 - **Axios**: API requests to the backend
 
@@ -25,6 +27,11 @@ A full-stack MERN application for managing and tracking tasks with user authenti
 - **MongoDB**: NoSQL database
 - **JWT**: Authentication and authorization
 - **Bcrypt.js**: Password hashing
+
+### Testing
+- **Jest**: Testing framework for both frontend and backend
+- **React Testing Library**: Component testing
+- **Supertest**: API endpoint testing
 
 ## 📋 Prerequisites
 
@@ -59,6 +66,8 @@ npm run dev
 
 ### Frontend Setup
 ```bash
+# Navigate to the client directory
+cd ..
 
 # Install dependencies
 npm install
@@ -67,28 +76,66 @@ npm install
 npm start
 ```
 
+## 🧪 Running Tests
+
+### Backend Tests
+```bash
+# Navigate to server directory
+cd server
+
+# Run tests
+npm test
+```
+
+### Frontend Tests
+```bash
+# In the project root
+npm test
+```
 
 ## 📁 Project Structure
 
 ```
-TaskTracker/             # React frontend
-│   ├── public/
-│   ├── src/
-│   │   ├── components/   # React components
-│   │   ├── App.js        # Main application component
-│   │   └── index.js      # Entry point
+TaskTracker/             # Root directory
+│
+├── public/              # Static files
+│   └── ...
+│
+├── src/                 # React frontend
+│   ├── components/      # React components
+│   │   ├── __tests__/   # Component tests
+│   │   ├── Header.jsx
+│   │   ├── Login.jsx
+│   │   ├── Register.jsx
+│   │   ├── SearchBar.jsx
+│   │   ├── TaskDashboard.jsx
+│   │   ├── TaskDetails.jsx
+│   │   ├── TaskList.jsx
+│   │   ├── TaskForm.jsx
+│   │   └── TaskFilter.jsx
+│   ├── App.js           # Main application component
+│   └── index.js         # Entry point
+│
+├── server/              # Node.js backend
+│   ├── __tests__/       # API tests
+│   │   ├── tasks.test.js
+│   │   └── testDbSetup.js
+│   ├── config/          # Configuration files
+│   │   └── db.js
+│   ├── middleware/      # Custom middleware
+│   │   └── auth.js
+│   ├── models/          # Mongoose models
+│   │   ├── Task.js
+│   │   └── User.js
+│   ├── routes/          # API routes
+│   │   ├── auth.js
+│   │   └── tasks.js
+│   ├── .env             # Environment variables
+│   ├── .env.test        # Test environment variables
+│   ├── server.js        # Server entry point
 │   └── package.json
 │
-├── server/               # Node.js backend
-│   ├── config/           # Configuration files
-│   ├── middleware/       # Custom middleware
-│   ├── models/           # Mongoose models
-│   ├── routes/           # API routes
-│   ├── .env              # Environment variables
-│   ├── server.js         # Server entry point
-│   └── package.json
-│
-└── README.md
+└── package.json
 ```
 
 ## 🔄 API Endpoints
@@ -106,7 +153,22 @@ TaskTracker/             # React frontend
 - **PUT** `/api/tasks/:id` - Update a task
 - **DELETE** `/api/tasks/:id` - Delete a task
 
+## 🧩 Key Features Implementation
 
+### Search Functionality
+- Real-time search filtering without additional API calls
+- Clear button for easy search reset
+- Visual feedback for search results
+
+### Client-Side Routing
+- Bookmark-friendly URLs for tasks and filtered views
+- Detailed task pages with dedicated URLs
+- URL-based filtering (e.g., `/tasks/filter/completed`)
+
+### Comprehensive Testing
+- Frontend component testing with React Testing Library
+- Backend API testing with Supertest
+- Test database isolation with MongoDB Memory Server
 
 ## 🤝 Contributing
 
@@ -125,6 +187,4 @@ This project is [MIT](LICENSE) licensed.
 ## 👨‍💻 Author
 
 **Rahul**
-
 - GitHub: [@ohkrahul](https://github.com/ohkrahul)
-
