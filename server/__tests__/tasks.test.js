@@ -1,7 +1,7 @@
 const request = require('supertest');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
-const { app } = require('../server'); // Import only the app, not startServer
+const { app } = require('../server'); 
 const User = require('../models/User');
 const Task = require('../models/Task');
 const dbHandler = require('./testDbSetup');
