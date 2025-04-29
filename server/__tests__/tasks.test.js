@@ -95,8 +95,7 @@ describe('Tasks API', () => {
     });
   });
 
-  // Rest of your test cases remain the same...
-  
+
   // Example of another test case for completion
   describe('GET /api/tasks/filter/:status', () => {
     beforeEach(async () => {
